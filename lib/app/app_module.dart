@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
-
 import 'package:flutter_modular/flutter_modular.dart';
 
 import 'app.dart';
+import 'modules/home/home_module.dart';
 import 'modules/localstorage/localstorage_module.dart';
 import 'modules/splash/splash_module.dart';
 
@@ -18,7 +18,7 @@ class AppModule extends Module {
   @override
   List<ModularRoute> get routes => [
         ModuleRoute('/splash', module: SplashModule()),
-//        ModuleRoute('/home', module: HomeModule()),
+        ModuleRoute('/home', module: HomeModule()),
       ];
 
   @override
