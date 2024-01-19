@@ -8,11 +8,19 @@ class StringHelper {
   static String onlyNumberString({required String text}) {
     final regexp = RegExp(r'\D');
     var onlySanitized = text.replaceAll(regexp, '');
-    return onlySanitized.replaceAll('.', '').replaceAll('/', '').replaceAll('-', '');
+    return onlySanitized
+        .replaceAll('.', '')
+        .replaceAll('/', '')
+        .replaceAll('-', '');
   }
 
   static double toDouble({required String value}) {
-    var valueSanitized = value.replaceAll('R', '').replaceAll('\$', '').replaceAll(' ', '').replaceAll('.', '').replaceAll(',', '.');
+    var valueSanitized = value
+        .replaceAll('R', '')
+        .replaceAll('\$', '')
+        .replaceAll(' ', '')
+        .replaceAll('.', '')
+        .replaceAll(',', '.');
 
     return double.tryParse(valueSanitized) ?? 0;
   }

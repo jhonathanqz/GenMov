@@ -127,5 +127,6 @@ class Movie extends Entity {
 
   String toJson() => json.encode(toMap());
 
-  factory Movie.fromJson(String source) => Movie.fromMap(json.decode(source) as Map<String, dynamic>);
+  factory Movie.fromJson(String source) =>
+      Movie.fromMap(json.decode(source) as Map<String, dynamic>);
 }

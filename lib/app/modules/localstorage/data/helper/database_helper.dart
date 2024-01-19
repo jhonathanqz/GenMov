@@ -41,7 +41,8 @@ class DatabaseHelper {
     }
     if (oldVersion == 3 && newVersion == 4) {
       await db.execute(DatabaseScript.repositionItensRemoteScript);
-      await db.execute(MigrationScript.migrationProductsRepositionConfirmedTableScript);
+      await db.execute(
+          MigrationScript.migrationProductsRepositionConfirmedTableScript);
     }
   }
 

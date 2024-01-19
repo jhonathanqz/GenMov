@@ -26,7 +26,9 @@ class Client implements IClient {
       );
       return response;
     } on DioException catch (e) {
-      if (e.type == DioExceptionType.connectionTimeout || e.type == DioExceptionType.receiveTimeout || e.type == DioExceptionType.sendTimeout) {
+      if (e.type == DioExceptionType.connectionTimeout ||
+          e.type == DioExceptionType.receiveTimeout ||
+          e.type == DioExceptionType.sendTimeout) {
         throw ApiTimeoutException(Strings.connectTimeout);
       }
 
@@ -35,17 +37,23 @@ class Client implements IClient {
       }
       switch (e.response?.statusCode) {
         case 400:
-          throw ApiBadRequestException(ApiHelper.buildMessageResponse(e.response));
+          throw ApiBadRequestException(
+              ApiHelper.buildMessageResponse(e.response));
         case 401:
-          throw ApiUnauthorizedException(ApiHelper.buildMessageResponse(e.response));
+          throw ApiUnauthorizedException(
+              ApiHelper.buildMessageResponse(e.response));
         case 403:
-          throw ApiForbiddenRequestException(ApiHelper.buildMessageResponse(e.response));
+          throw ApiForbiddenRequestException(
+              ApiHelper.buildMessageResponse(e.response));
         case 404:
-          throw ApiNotFoundException(ApiHelper.buildMessageResponse(e.response));
+          throw ApiNotFoundException(
+              ApiHelper.buildMessageResponse(e.response));
         case 412:
-          throw ApiSessionExpiredException(ApiHelper.buildMessageResponse(e.response));
+          throw ApiSessionExpiredException(
+              ApiHelper.buildMessageResponse(e.response));
         case 500:
-          throw ApiInternalErrorException(ApiHelper.buildMessageResponse(e.response));
+          throw ApiInternalErrorException(
+              ApiHelper.buildMessageResponse(e.response));
         default:
           throw ApiErrorException(
             ApiHelper.buildMessageResponse(e.response),
@@ -70,7 +78,9 @@ class Client implements IClient {
       );
       return response;
     } on DioException catch (e) {
-      if (e.type == DioExceptionType.connectionTimeout || e.type == DioExceptionType.receiveTimeout || e.type == DioExceptionType.sendTimeout) {
+      if (e.type == DioExceptionType.connectionTimeout ||
+          e.type == DioExceptionType.receiveTimeout ||
+          e.type == DioExceptionType.sendTimeout) {
         throw ApiTimeoutException(Strings.connectTimeout);
       }
 
@@ -79,17 +89,23 @@ class Client implements IClient {
       }
       switch (e.response?.statusCode) {
         case 400:
-          throw ApiBadRequestException(ApiHelper.buildMessageResponse(e.response));
+          throw ApiBadRequestException(
+              ApiHelper.buildMessageResponse(e.response));
         case 401:
-          throw ApiUnauthorizedException(ApiHelper.buildMessageResponse(e.response));
+          throw ApiUnauthorizedException(
+              ApiHelper.buildMessageResponse(e.response));
         case 403:
-          throw ApiForbiddenRequestException(ApiHelper.buildMessageResponse(e.response));
+          throw ApiForbiddenRequestException(
+              ApiHelper.buildMessageResponse(e.response));
         case 404:
-          throw ApiNotFoundException(ApiHelper.buildMessageResponse(e.response));
+          throw ApiNotFoundException(
+              ApiHelper.buildMessageResponse(e.response));
         case 412:
-          throw ApiSessionExpiredException(ApiHelper.buildMessageResponse(e.response));
+          throw ApiSessionExpiredException(
+              ApiHelper.buildMessageResponse(e.response));
         case 500:
-          throw ApiInternalErrorException(ApiHelper.buildMessageResponse(e.response));
+          throw ApiInternalErrorException(
+              ApiHelper.buildMessageResponse(e.response));
         default:
           throw ApiErrorException(
             ApiHelper.buildMessageResponse(e.response),
@@ -114,7 +130,9 @@ class Client implements IClient {
       );
       return response;
     } on DioException catch (e) {
-      if (e.type == DioExceptionType.connectionTimeout || e.type == DioExceptionType.receiveTimeout || e.type == DioExceptionType.sendTimeout) {
+      if (e.type == DioExceptionType.connectionTimeout ||
+          e.type == DioExceptionType.receiveTimeout ||
+          e.type == DioExceptionType.sendTimeout) {
         throw ApiTimeoutException(Strings.connectTimeout);
       }
 
@@ -123,17 +141,23 @@ class Client implements IClient {
       }
       switch (e.response?.statusCode) {
         case 400:
-          throw ApiBadRequestException(ApiHelper.buildMessageResponse(e.response));
+          throw ApiBadRequestException(
+              ApiHelper.buildMessageResponse(e.response));
         case 401:
-          throw ApiUnauthorizedException(ApiHelper.buildMessageResponse(e.response));
+          throw ApiUnauthorizedException(
+              ApiHelper.buildMessageResponse(e.response));
         case 403:
-          throw ApiForbiddenRequestException(ApiHelper.buildMessageResponse(e.response));
+          throw ApiForbiddenRequestException(
+              ApiHelper.buildMessageResponse(e.response));
         case 404:
-          throw ApiNotFoundException(ApiHelper.buildMessageResponse(e.response));
+          throw ApiNotFoundException(
+              ApiHelper.buildMessageResponse(e.response));
         case 412:
-          throw ApiSessionExpiredException(ApiHelper.buildMessageResponse(e.response));
+          throw ApiSessionExpiredException(
+              ApiHelper.buildMessageResponse(e.response));
         case 500:
-          throw ApiInternalErrorException(ApiHelper.buildMessageResponse(e.response));
+          throw ApiInternalErrorException(
+              ApiHelper.buildMessageResponse(e.response));
         default:
           throw ApiErrorException(
             ApiHelper.buildMessageResponse(e.response),
@@ -158,7 +182,9 @@ class Client implements IClient {
       );
       return response;
     } on DioException catch (e) {
-      if (e.type == DioExceptionType.connectionTimeout || e.type == DioExceptionType.receiveTimeout || e.type == DioExceptionType.sendTimeout) {
+      if (e.type == DioExceptionType.connectionTimeout ||
+          e.type == DioExceptionType.receiveTimeout ||
+          e.type == DioExceptionType.sendTimeout) {
         throw ApiTimeoutException(Strings.connectTimeout);
       }
 
@@ -167,17 +193,23 @@ class Client implements IClient {
       }
       switch (e.response?.statusCode) {
         case 400:
-          throw ApiBadRequestException(ApiHelper.buildMessageResponse(e.response));
+          throw ApiBadRequestException(
+              ApiHelper.buildMessageResponse(e.response));
         case 401:
-          throw ApiUnauthorizedException(ApiHelper.buildMessageResponse(e.response));
+          throw ApiUnauthorizedException(
+              ApiHelper.buildMessageResponse(e.response));
         case 403:
-          throw ApiForbiddenRequestException(ApiHelper.buildMessageResponse(e.response));
+          throw ApiForbiddenRequestException(
+              ApiHelper.buildMessageResponse(e.response));
         case 404:
-          throw ApiNotFoundException(ApiHelper.buildMessageResponse(e.response));
+          throw ApiNotFoundException(
+              ApiHelper.buildMessageResponse(e.response));
         case 412:
-          throw ApiSessionExpiredException(ApiHelper.buildMessageResponse(e.response));
+          throw ApiSessionExpiredException(
+              ApiHelper.buildMessageResponse(e.response));
         case 500:
-          throw ApiInternalErrorException(ApiHelper.buildMessageResponse(e.response));
+          throw ApiInternalErrorException(
+              ApiHelper.buildMessageResponse(e.response));
         default:
           throw ApiErrorException(
             ApiHelper.buildMessageResponse(e.response),
@@ -200,7 +232,9 @@ class Client implements IClient {
       );
       return response;
     } on DioException catch (e) {
-      if (e.type == DioExceptionType.connectionTimeout || e.type == DioExceptionType.receiveTimeout || e.type == DioExceptionType.sendTimeout) {
+      if (e.type == DioExceptionType.connectionTimeout ||
+          e.type == DioExceptionType.receiveTimeout ||
+          e.type == DioExceptionType.sendTimeout) {
         throw ApiTimeoutException(Strings.connectTimeout);
       }
 
@@ -209,17 +243,23 @@ class Client implements IClient {
       }
       switch (e.response?.statusCode) {
         case 400:
-          throw ApiBadRequestException(ApiHelper.buildMessageResponse(e.response));
+          throw ApiBadRequestException(
+              ApiHelper.buildMessageResponse(e.response));
         case 401:
-          throw ApiUnauthorizedException(ApiHelper.buildMessageResponse(e.response));
+          throw ApiUnauthorizedException(
+              ApiHelper.buildMessageResponse(e.response));
         case 403:
-          throw ApiForbiddenRequestException(ApiHelper.buildMessageResponse(e.response));
+          throw ApiForbiddenRequestException(
+              ApiHelper.buildMessageResponse(e.response));
         case 404:
-          throw ApiNotFoundException(ApiHelper.buildMessageResponse(e.response));
+          throw ApiNotFoundException(
+              ApiHelper.buildMessageResponse(e.response));
         case 412:
-          throw ApiSessionExpiredException(ApiHelper.buildMessageResponse(e.response));
+          throw ApiSessionExpiredException(
+              ApiHelper.buildMessageResponse(e.response));
         case 500:
-          throw ApiInternalErrorException(ApiHelper.buildMessageResponse(e.response));
+          throw ApiInternalErrorException(
+              ApiHelper.buildMessageResponse(e.response));
         default:
           throw ApiErrorException(
             ApiHelper.buildMessageResponse(e.response),

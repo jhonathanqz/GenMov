@@ -1,7 +1,6 @@
 import 'package:flutter_modular/flutter_modular.dart';
 import 'package:gen_move/app/core/constants/app_token.dart';
 import 'package:gen_move/app/modules/movie/data/provider/movie_provider_impl.dart';
-import 'package:gen_move/app/modules/movie/domain/entities/movie.dart';
 import 'package:gen_move/app/modules/movie/domain/usecase/get_movies_usecase.dart';
 import 'package:gen_move/app/modules/movie/domain/usecase/get_popular_movies_usecase.dart';
 import 'package:gen_move/app/modules/movie/domain/usecase/get_top_rated_movies_usecase.dart';
