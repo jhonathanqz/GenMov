@@ -55,7 +55,8 @@ class ClientHTTP {
   static Dio get clientJWT => setupClientJwt();
 
   static getEnvironmentSettings() {
-    final String currentEnvironment = AppEnvironmentSetup.environment.name.toUpperCase();
+    final String currentEnvironment =
+        AppEnvironmentSetup.environment.name.toUpperCase();
     AppToken.staticToken = dotenv.get('STATIC_TOKEN');
     AppToken.urlBase = dotenv.get(currentEnvironment);
   }

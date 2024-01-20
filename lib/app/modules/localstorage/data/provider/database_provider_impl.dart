@@ -1,3 +1,4 @@
+import 'package:flutter/material.dart';
 import 'package:sqflite/sqflite.dart';
 
 import '../../infrastructure/repositories/contracts/database_provider.dart';
@@ -69,7 +70,7 @@ class DatabaseProviderImpl implements DatabaseProvider {
 
       return response;
     } catch (e) {
-      print('******ERRO QUERY $e');
+      debugPrint('******ERRO QUERY $e');
       rethrow;
     }
   }
@@ -92,7 +93,7 @@ class DatabaseProviderImpl implements DatabaseProvider {
 
       return response;
     } catch (e) {
-      print('***** ERRO UPDATE $e ');
+      debugPrint('***** ERRO UPDATE $e ');
       rethrow;
     }
   }
@@ -107,7 +108,7 @@ class DatabaseProviderImpl implements DatabaseProvider {
       final response = await _db!.rawQuery(sql, whereArgs);
       return response;
     } catch (e) {
-      print('***Erro rawQuery: $e');
+      debugPrint('***Erro rawQuery: $e');
       rethrow;
     }
   }
@@ -125,7 +126,7 @@ class DatabaseProviderImpl implements DatabaseProvider {
       }
       await batch.commit();
     } catch (e) {
-      print('***Erro bulkInsert: $e');
+      debugPrint('***Erro bulkInsert: $e');
       rethrow;
     }
   }
