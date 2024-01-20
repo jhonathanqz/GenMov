@@ -24,6 +24,8 @@ Projeto teste para avaliação da empresa Gen.
 
 Obs: Neste projeto existe um módulo `Localstorage` que não está sendo usado, assim como funcionalidades de `client` para requisições http, ambos estão presentes apenas para a empresa avaliar requisitos como abstrações.
 
+No arquivo `.env` é necessário criar uma variável com o nome `BASE_PATH`, onde a mesma vai ter o caminho base onde está o arquivo mock dos filmes.
+
 ## :sparkles: Funcionalidades
 
 :heavy_check_mark: Lista de filmes;
