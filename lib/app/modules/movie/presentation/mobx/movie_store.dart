@@ -50,7 +50,7 @@ abstract class MovieStoreBase with Store {
     try {
       movies = [];
       final response = await _getMoviesUsecase.call(NoParams());
-      await Future.delayed(const Duration(seconds: 5));
+      await Future.delayed(const Duration(seconds: 1));
       movies.addAll(response);
     } catch (e) {
       isError = true;
