@@ -22,27 +22,20 @@ mixin _$MovieStore on MovieStoreBase, Store {
       (_$hasMoviesComputed ??= Computed<bool>(() => super.hasMovies,
               name: 'MovieStoreBase.hasMovies'))
           .value;
-  Computed<bool>? _$isLoadingComputed;
+
+  late final _$isLoadingAtom =
+      Atom(name: 'MovieStoreBase.isLoading', context: context);
 
   @override
-  bool get isLoading =>
-      (_$isLoadingComputed ??= Computed<bool>(() => super.isLoading,
-              name: 'MovieStoreBase.isLoading'))
-          .value;
-
-  late final _$_isLoadingAtom =
-      Atom(name: 'MovieStoreBase._isLoading', context: context);
-
-  @override
-  bool get _isLoading {
-    _$_isLoadingAtom.reportRead();
-    return super._isLoading;
+  bool get isLoading {
+    _$isLoadingAtom.reportRead();
+    return super.isLoading;
   }
 
   @override
-  set _isLoading(bool value) {
-    _$_isLoadingAtom.reportWrite(value, super._isLoading, () {
-      super._isLoading = value;
+  set isLoading(bool value) {
+    _$isLoadingAtom.reportWrite(value, super.isLoading, () {
+      super.isLoading = value;
     });
   }
 
@@ -142,15 +135,29 @@ mixin _$MovieStore on MovieStoreBase, Store {
     return _$clearErrorAsyncAction.run(() => super.clearError());
   }
 
+  late final _$MovieStoreBaseActionController =
+      ActionController(name: 'MovieStoreBase', context: context);
+
+  @override
+  void stError(bool value) {
+    final _$actionInfo = _$MovieStoreBaseActionController.startAction(
+        name: 'MovieStoreBase.stError');
+    try {
+      return super.stError(value);
+    } finally {
+      _$MovieStoreBaseActionController.endAction(_$actionInfo);
+    }
+  }
+
   @override
   String toString() {
     return '''
+isLoading: ${isLoading},
 isError: ${isError},
 errorMessage: ${errorMessage},
 movies: ${movies},
 hasError: ${hasError},
-hasMovies: ${hasMovies},
-isLoading: ${isLoading}
+hasMovies: ${hasMovies}
     ''';
   }
 }

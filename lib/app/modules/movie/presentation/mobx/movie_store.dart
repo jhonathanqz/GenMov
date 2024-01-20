@@ -28,7 +28,7 @@ abstract class MovieStoreBase with Store {
         _searchMoviesUsecase = searchMoviesUsecase;
 
   @observable
-  bool _isLoading = false;
+  bool isLoading = false;
 
   @observable
   bool isError = false;
@@ -36,26 +36,32 @@ abstract class MovieStoreBase with Store {
   @observable
   String errorMessage = '';
 
+  @action
+  void stError(bool value) => isError = value;
+
   @observable
   List<Movie> movies = [];
 
   @action
   Future<void> getMovies() async {
-    _isLoading = true;
+    isLoading = true;
     isError = false;
     errorMessage = '';
     try {
-      movies = await _getMoviesUsecase.call(NoParams());
+      movies = [];
+      final response = await _getMoviesUsecase.call(NoParams());
+      await Future.delayed(const Duration(seconds: 5));
+      movies.addAll(response);
     } catch (e) {
       isError = true;
       errorMessage = e.toString();
     }
-    _isLoading = false;
+    isLoading = false;
   }
 
   @action
   Future<void> getTopRatedMovies() async {
-    _isLoading = true;
+    isLoading = true;
     isError = false;
     errorMessage = '';
     try {
@@ -64,12 +70,12 @@ abstract class MovieStoreBase with Store {
       isError = true;
       errorMessage = e.toString();
     }
-    _isLoading = false;
+    isLoading = false;
   }
 
   @action
   Future<void> getPopularMovies() async {
-    _isLoading = true;
+    isLoading = true;
     isError = false;
     errorMessage = '';
     try {
@@ -78,12 +84,12 @@ abstract class MovieStoreBase with Store {
       isError = true;
       errorMessage = e.toString();
     }
-    _isLoading = false;
+    isLoading = false;
   }
 
   @action
   Future<void> searchMovies(String query) async {
-    _isLoading = true;
+    isLoading = true;
     isError = false;
     errorMessage = '';
     try {
@@ -92,7 +98,7 @@ abstract class MovieStoreBase with Store {
       isError = true;
       errorMessage = e.toString();
     }
-    _isLoading = false;
+    isLoading = false;
   }
 
   @action
@@ -111,7 +117,4 @@ abstract class MovieStoreBase with Store {
 
   @computed
   bool get hasMovies => movies.isNotEmpty;
-
-  @computed
-  bool get isLoading => _isLoading;
 }

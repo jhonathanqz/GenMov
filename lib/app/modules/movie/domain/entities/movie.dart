@@ -15,7 +15,7 @@ class Movie extends Entity {
   final String releaseDate;
   final String title;
   final bool video;
-  final int voteAverage;
+  final double voteAverage;
   final int voteCount;
 
   Movie({
@@ -47,7 +47,7 @@ class Movie extends Entity {
     String? releaseDate,
     String? title,
     bool? video,
-    int? voteAverage,
+    double? voteAverage,
     int? voteCount,
   }) {
     return Movie(
@@ -68,41 +68,43 @@ class Movie extends Entity {
     );
   }
 
+  String get dateView => '(${releaseDate.split('-').first})';
+
   Map<String, dynamic> toMap() {
     return <String, dynamic>{
       'adult': adult,
-      'backdropPath': backdropPath,
-      'genreIds': genreIds,
+      'backdrop_path': backdropPath,
+      'genre_ids': genreIds,
       'id': id,
-      'originalLanguage': originalLanguage,
-      'originalTitle': originalTitle,
+      'original_language': originalLanguage,
+      'original_title': originalTitle,
       'overview': overview,
       'popularity': popularity,
-      'posterPath': posterPath,
-      'releaseDate': releaseDate,
+      'poster_path': posterPath,
+      'release_date': releaseDate,
       'title': title,
       'video': video,
-      'voteAverage': voteAverage,
-      'voteCount': voteCount,
+      'vote_average': voteAverage,
+      'vote_count': voteCount,
     };
   }
 
   factory Movie.fromMap(Map<String, dynamic> map) {
     return Movie(
-      adult: map['adult'] as bool,
-      backdropPath: map['backdropPath'] as String,
-      genreIds: List<int>.from((map['genreIds'] as List<int>)),
-      id: map['id'] as int,
-      originalLanguage: map['originalLanguage'] as String,
-      originalTitle: map['originalTitle'] as String,
-      overview: map['overview'] as String,
-      popularity: map['popularity'] as double,
-      posterPath: map['posterPath'] as String,
-      releaseDate: map['releaseDate'] as String,
-      title: map['title'] as String,
-      video: map['video'] as bool,
-      voteAverage: map['voteAverage'] as int,
-      voteCount: map['voteCount'] as int,
+      adult: map['adult'] as bool? ?? false,
+      backdropPath: map['backdrop_path'] ?? '',
+      genreIds: List<int>.from((map['genre_ids'] ?? [])),
+      id: map['id'] as int? ?? 0,
+      originalLanguage: map['original_language'] ?? '',
+      originalTitle: map['original_title'] ?? '',
+      overview: map['overview'] ?? '',
+      popularity: map['popularity'] as double? ?? 0,
+      posterPath: map['poster_path'] ?? '',
+      releaseDate: map['release_date'] ?? '',
+      title: map['title'] ?? '',
+      video: map['video'] as bool? ?? false,
+      voteAverage: map['vote_average'] as double? ?? 0,
+      voteCount: map['vote_count'] as int? ?? 0,
     );
   }
 

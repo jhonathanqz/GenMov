@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:gen_move/app/shared/styles/app_images.dart';
 
 import 'splash_store.dart';
 
@@ -21,10 +22,13 @@ class _SplashPageState extends State<SplashPage> {
   @override
   Widget build(BuildContext context) {
     return Container(
-      padding: const EdgeInsets.all(10),
-      color: Colors.blue,
-      child: const Center(
-        child: Icon(Icons.home),
+      padding: const EdgeInsets.all(20),
+      color: Colors.white,
+      child: Center(
+        child: Padding(
+          padding: const EdgeInsets.symmetric(horizontal: 50),
+          child: Image.asset(AppImages.marvelStudios),
+        ),
       ),
     );
   }

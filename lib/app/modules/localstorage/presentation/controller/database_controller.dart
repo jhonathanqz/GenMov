@@ -1,3 +1,5 @@
+import 'package:flutter/material.dart';
+
 import '../../domain/usecase/database/bulk_insert_usecase.dart';
 import '../../domain/usecase/database/delete_usecase.dart';
 import '../../domain/usecase/database/insert_usecase.dart';
@@ -53,7 +55,7 @@ class DatabaseController {
         whereArgs: whereArgs,
       );
     } catch (e) {
-      print('***Erro update: $e');
+      debugPrint('***Erro update: $e');
       rethrow;
     }
   }

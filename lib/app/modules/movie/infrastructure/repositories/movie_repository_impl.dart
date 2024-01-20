@@ -12,10 +12,7 @@ class MovieRepositoryImpl implements MovieRepository {
   Future<List<Movie>> getMovies() async {
     try {
       final response = await _movieProvider.getMovies();
-      final modelList = (response as List<Map<String, dynamic>>)
-          .map((e) => Movie.fromMap(e))
-          .toList();
-      return modelList;
+      return response.mcu;
     } catch (e) {
       rethrow;
     }

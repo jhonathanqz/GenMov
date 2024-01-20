@@ -13,6 +13,8 @@ class MovieController {
   bool get hasMovies => _movieStore.hasMovies;
   bool get isLoading => _movieStore.isLoading;
 
+  void stError(bool value) => _movieStore.stError(value);
+
   String filter = '';
 
   void stFilter(String value) {
